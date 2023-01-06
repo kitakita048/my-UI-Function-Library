@@ -3,14 +3,17 @@ import React from 'react';
 
 import {css} from "@emotion/react"
 import {f} from "./emotionStyles/function"
+import Card from './components/common/Card';
 
 const App = () => {
   return (
     <div className="App">
       <div css={contentsWrap}>
-        hoge
+        <Card
+          title='apply3PointsLeader(text:string, num:number)'
+          description='文字列に対して、決められた文字数で3点リーダーを付与する。'
+        />
       </div>
-      
     </div>
   );
 }
