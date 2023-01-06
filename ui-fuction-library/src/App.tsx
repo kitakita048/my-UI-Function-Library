@@ -4,15 +4,18 @@ import React from 'react';
 import {css} from "@emotion/react"
 import {f} from "./emotionStyles/function"
 import Card from './components/common/Card';
+import Apply3PointsLeaderInspection from './components/functions/Apply3PointsLeaderInspection';
 
 const App = () => {
   return (
     <div className="App">
       <div css={contentsWrap}>
         <Card
-          title='apply3PointsLeader(text:string, num:number)'
+          title='apply3PointsLeader(text:string, maxNum:number)'
           description='文字列に対して、決められた文字数で3点リーダーを付与する。'
-        />
+        >
+          <Apply3PointsLeaderInspection/>
+        </Card>
       </div>
     </div>
   );

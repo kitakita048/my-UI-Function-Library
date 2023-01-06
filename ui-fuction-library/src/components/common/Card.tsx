@@ -3,15 +3,14 @@ import {FC, ReactNode, useState } from 'react'
 
 import {css} from "@emotion/react"
 import {f} from "../../emotionStyles/function"
-import { transform } from 'typescript';
 
 type CardProps = {
   title: string;
   description:string;
-  // children: ReactNode;
+  children: ReactNode;
 }
 
-const Card:React.FC<CardProps> = ({title,description}) => 
+const Card:React.FC<CardProps> = ({title,description,children}) => 
 {
   const [openChildrenFlag,setOpenChildren] = useState(false)
   const onOpenChildren = ()=> {
@@ -28,7 +27,7 @@ const Card:React.FC<CardProps> = ({title,description}) =>
         >
           demo
         </button>
-        <div css={[cardChildrenWrap, openChildrenFlag && cardChildrenWrapOpen]}></div>
+        <div css={[cardChildrenWrap, openChildrenFlag && cardChildrenWrapOpen]}>{children}</div>
       </div>
     </div>
   )
@@ -70,10 +69,10 @@ const cardDescription = css({
   lineHeight:'1.5',
   color:'#626264',
   [f.pc()]: {
-    marginBottom: f.vwPc(20),
+    marginBottom: f.vwPc(30),
   },
   [f.sp()]: {
-    marginBottom: f.vwSp(20),
+    marginBottom: f.vwSp(30),
   },
 })
 
@@ -115,15 +114,16 @@ const cardDemoButtonOpen = css({
 const cardChildrenWrap = css({
   overflow:'hidden',
   maxHeight:'0px',
-  transition:'max-height 0.3s ease'
+  padding:'0',
+  transition:'max-height 0.2s ease, padding 0.2s ease'
 })
 const cardChildrenWrapOpen = css({
   maxHeight:'100vh',
   [f.pc()]: {
-    paddingTop: f.vwPc(20),
+    padding: `${f.vwPc(30)} 0 0 0`,
   },
   [f.sp()]: {
-    paddingTop: f.vwSp(20),
+    padding: `${f.vwPc(30)} 0 0 0`,
   },
 })
 
