@@ -4,6 +4,7 @@ import './assets/css/reset.css'
 import './assets/css/common.css'
 import App from './App';
 import Head from './components/common/head';
+import Header from './components/common/Header';
 import reportWebVitals from './reportWebVitals'; 
 
 const root = ReactDOM.createRoot(
@@ -12,6 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Head title="UI・Functions・Animation・Library"/>
+    <Header/>
     <App />
   </React.StrictMode>
 );
