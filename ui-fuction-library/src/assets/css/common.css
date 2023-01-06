@@ -1,0 +1,9 @@
+body {
+  font-family: YakuHanJP_Noto, "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: 16px;
+}
+img {
+  width: 100%;
+  display: "block";
+  line-height: 1;
+}
