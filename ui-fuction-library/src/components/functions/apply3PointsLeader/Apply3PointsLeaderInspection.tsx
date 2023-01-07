@@ -40,7 +40,7 @@ const Apply3PointsLeaderInspection: React.FC = () => {
           <TextInput<FormData>
             name="maxNum" 
             placeHolder="最大文字数" 
-            labelText="num"
+            labelText="maxNum"
             required={false}
           />
         </div>

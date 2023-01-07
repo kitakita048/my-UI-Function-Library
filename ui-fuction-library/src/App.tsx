@@ -5,7 +5,7 @@ import {f} from "./emotionStyles/function"
 import IndexFunctions from './components/functions/indexFunctions';
 
 const App = () => {
-  const [selectCategory,setSelectCategory] = useState<string>("UI")
+  const [selectCategory,setSelectCategory] = useState<string>("Functions")
   const handleCategoryClick = (item:string) =>{
     setSelectCategory(item)
   }
@@ -31,6 +31,12 @@ const App = () => {
         {selectCategory === "Functions" &&(
           <IndexFunctions/>
         )}
+        {selectCategory === "UI" &&(
+          <p>comming soon</p>
+        )}
+        {selectCategory === "Animation" &&(
+          <p>comming soon</p>
+        )}
 
       </div>
     </div>
@@ -55,7 +61,7 @@ const categoryListArea = css({
     marginBottom:f.vwPc(32)
   },
   [f.sp()]: {
-    padding: f.vwSp(24),
+    gap: f.vwSp(24),
     marginBottom:f.vwSp(32)
   },
   "li":{
