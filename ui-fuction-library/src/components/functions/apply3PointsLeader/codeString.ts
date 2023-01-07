@@ -6,6 +6,6 @@ export const codeString:string = `/**
   export default function apply3PointsLeader(text:string, maxNum:number):string{
     const addText = '…'
     if(text.length >= maxNum) 
-    return String(text.substring(0, maxNum - 1) + addText)
+      return String(text.substring(0, maxNum - 1) + addText)
     else return text
   }`

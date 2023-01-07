@@ -53,6 +53,7 @@ const Apply3PointsLeaderInspection: React.FC = () => {
         </div>
       )}
       <div css={codeArea}>
+        <h4 css={codeHdg}>SourceCode</h4>
         <SyntaxHighlighter language='typescript' style={atomOneDarkReasonable}>
           {codeString}
         </SyntaxHighlighter>
@@ -112,9 +113,24 @@ const codeArea = css({
   },
   "pre":{
     overflow:"scroll !important"
+  },
+  "code":{
+    lineHeight:"1.5",
+    fontSize:"0.85rem"
   }
 })
 
+const codeHdg =css({
+  fontSize:"1.375rem",
+  fontWeight:"700",
+  lineHeight:"1.5",
+  [f.pc()]: {
+    marginBottom:f.vwPc(12)
+  },
+  [f.sp()]: {
+    marginBottom:f.vwSp(12)
+  },
+})
 
 
 export default Apply3PointsLeaderInspection;

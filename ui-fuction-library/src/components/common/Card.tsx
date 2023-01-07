@@ -69,10 +69,10 @@ const cardDescription = css({
   lineHeight:'1.5',
   color:'#626264',
   [f.pc()]: {
-    marginBottom: f.vwPc(30),
+    marginBottom: f.vwPc(20),
   },
   [f.sp()]: {
-    marginBottom: f.vwSp(30),
+    marginBottom: f.vwSp(20),
   },
 })
 
