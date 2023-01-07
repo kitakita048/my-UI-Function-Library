@@ -44,10 +44,10 @@ const cardWrap = css({
 
 const cardInner = css({
   [f.pc()]: {
-    padding: f.vwPc(20),
+    padding: f.vwPc(16),
   },
   [f.sp()]: {
-    padding: f.vwSp(20),
+    padding: f.vwSp(16),
   },
 })
 
@@ -57,10 +57,10 @@ const cardTitle = css({
   lineHeight:'1.5',
   color:'#1A1A1C',
   [f.pc()]: {
-    marginBottom: f.vwPc(10),
+    marginBottom: f.vwPc(8),
   },
   [f.sp()]: {
-    marginBottom: f.vwSp(10),
+    marginBottom: f.vwSp(8),
   },
 })
 
@@ -69,10 +69,10 @@ const cardDescription = css({
   lineHeight:'1.5',
   color:'#626264',
   [f.pc()]: {
-    marginBottom: f.vwPc(20),
+    marginBottom: f.vwPc(16),
   },
   [f.sp()]: {
-    marginBottom: f.vwSp(20),
+    marginBottom: f.vwSp(16),
   },
 })
 
@@ -120,10 +120,10 @@ const cardChildrenWrap = css({
 const cardChildrenWrapOpen = css({
   maxHeight:'100vh',
   [f.pc()]: {
-    padding: `${f.vwPc(30)} 0 0 0`,
+    padding: `${f.vwPc(32)} 0 0 0`,
   },
   [f.sp()]: {
-    padding: `${f.vwPc(30)} 0 0 0`,
+    padding: `${f.vwPc(32)} 0 0 0`,
   },
 })
 

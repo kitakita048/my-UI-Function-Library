@@ -20,10 +20,10 @@ const title = css({
 const header = css({
   width:'100%',
   [f.pc()]: {
-    padding: f.vwPc(30),
+    padding: `${f.vwPc(16)} ${f.vwPc(32)}`,
   },
   [f.sp()]: {
-    padding: f.vwSp(30),
+    padding: `${f.vwSp(16)} ${f.vwSp(32)}`,
   },
 })
 

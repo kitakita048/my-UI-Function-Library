@@ -65,13 +65,13 @@ const Apply3PointsLeaderInspection: React.FC = () => {
 const formArea = css({
   display:'flex',
   [f.pc()]: {
-    marginBottom: f.vwPc(12),
-    gap:f.vwPc(12),
+    marginBottom: f.vwPc(24),
+    gap:f.vwPc(8),
     alignItems:'center'
   },
   [f.sp()]: {
     marginBottom: f.vwSp(24),
-    gap:f.vwSp(12),
+    gap:f.vwSp(8),
     flexDirection:"column"
   },
 })
@@ -90,10 +90,10 @@ const resultArea = css({
     color:'#1A1A1C',
     lineHeight:'1.5',
     [f.pc()]: {
-      marginBottom:f.vwPc(12)
+      marginBottom:f.vwPc(8)
     },
     [f.sp()]: {
-      marginBottom:f.vwSp(12)
+      marginBottom:f.vwSp(8)
     },
   },
   "p":{
@@ -125,10 +125,10 @@ const codeHdg =css({
   fontWeight:"700",
   lineHeight:"1.5",
   [f.pc()]: {
-    marginBottom:f.vwPc(12)
+    marginBottom:f.vwPc(8)
   },
   [f.sp()]: {
-    marginBottom:f.vwSp(12)
+    marginBottom:f.vwSp(8)
   },
 })
 

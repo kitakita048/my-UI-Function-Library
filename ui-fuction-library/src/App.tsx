@@ -1,21 +1,37 @@
-import React from 'react';
+import {useState} from 'react';
 /** @jsxImportSource @emotion/react */
-
 import {css} from "@emotion/react"
 import {f} from "./emotionStyles/function"
-import Card from './components/common/Card';
-import Apply3PointsLeaderInspection from './components/functions/apply3PointsLeader/Apply3PointsLeaderInspection';
+import IndexFunctions from './components/functions/indexFunctions';
 
 const App = () => {
+  const [selectCategory,setSelectCategory] = useState<string>("UI")
+  const handleCategoryClick = (item:string) =>{
+    setSelectCategory(item)
+  }
+  const categoryArray: string[] = ["UI","Functions","Animation"]
+  const categoryList = categoryArray.map(item => {
+    return(
+      <li
+        key={item}
+        onClick={() => handleCategoryClick(item)}
+        css={[listItem, selectCategory === item && isActive]}
+      >
+        {item}
+      </li>
+    )
+  })
+  
   return (
     <div className="App">
       <div css={contentsWrap}>
-        <Card
-          title='apply3PointsLeader(text:string, maxNum:number)'
-          description='文字列に対して、設定した文字数から3点リーダーを付与する。'
-        >
-          <Apply3PointsLeaderInspection/>
-        </Card>
+        <ul css={categoryListArea}>
+          {categoryList}
+        </ul>
+        {selectCategory === "Functions" &&(
+          <IndexFunctions/>
+        )}
+
       </div>
     </div>
   );
@@ -24,12 +40,41 @@ const App = () => {
 const contentsWrap = css({
   width:'100%',
   [f.pc()]: {
-    padding: f.vwPc(30),
+    padding: `${f.vwPc(16)} ${f.vwPc(32)} ${f.vwPc(32)} ${f.vwPc(32)}`,
   },
   [f.sp()]: {
-    padding: f.vwSp(30),
+    padding: `${f.vwSp(16)} ${f.vwSp(32)} ${f.vwSp(32)} ${f.vwSp(32)}`,
   },
-
 })
 
+const categoryListArea = css({
+  display:"flex",
+  alignItems:"center",
+  [f.pc()]: {
+    gap: f.vwPc(24),
+    marginBottom:f.vwPc(32)
+  },
+  [f.sp()]: {
+    padding: f.vwSp(24),
+    marginBottom:f.vwSp(32)
+  },
+  "li":{
+    cursor:"pointer"
+  }
+})
+
+const listItem = css({
+  fontSize:"1.25rem",
+  fontWeight:'700',
+  lineHeight:'1.5',
+  color:"#003EE5",
+  textAlign:"center",
+  textDecorationLine:'underline',
+  '&:hover':{
+    color:'#0030B2'
+  },
+})
+const isActive = css({
+  color:'#0030B2'
+})
 export default App;
