@@ -4,9 +4,9 @@
  * @return {string} 3点リーダー付き文字列
 */
 
-export default function apply3PointsLeader(text:string, maxNum:number){
+export default function apply3PointsLeader(text:string, maxNum:number):string{
   const addText = '…'
-  if(text.length > maxNum) 
+  if(text.length >= maxNum) 
     return String(text.substring(0, maxNum - 1) + addText)
   else return text
 }

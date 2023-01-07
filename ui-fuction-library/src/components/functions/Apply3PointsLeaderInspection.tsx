@@ -1,5 +1,6 @@
 import { FormProvider, useForm } from "react-hook-form";
 import { TextInput } from "../common/TextInput";
+import { Button } from "../common/Button"
 
 import  apply3PointsLeader from  "./utility/apply3PoinstsLeader"
 
@@ -23,26 +24,26 @@ const Apply3PointsLeaderInspection: React.FC = () => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div css={formArea}>
           <TextInput<FormData> 
             name="freeText" 
             placeHolder="自由なテキスト" 
             labelText="text"
-            required={true}
+            required={false}
           />
           <TextInput<FormData>
             name="maxNum" 
             placeHolder="最大文字数" 
             labelText="num"
-            required={true}
+            required={false}
           />
-          <input type="submit" />
         </div>
+        <Button title="結果を表示" onClick={handleSubmit}/>
       </form>
       {resultText !== '' &&(
-        <div>
-          <span>結果</span>
+        <div css={resultArea}>
+          <span>return</span>
           <p>{resultText}</p>
         </div>
       )}
@@ -52,15 +53,46 @@ const Apply3PointsLeaderInspection: React.FC = () => {
 
 const formArea = css({
   display:'flex',
-  alignItems:'center',
   [f.pc()]: {
     marginBottom: f.vwPc(12),
-    gap:f.vwPc(12)
+    gap:f.vwPc(12),
+    alignItems:'center'
   },
   [f.sp()]: {
-    padding: f.vwSp(12),
-    gap:f.vwSp(12)
+    marginBottom: f.vwSp(24),
+    gap:f.vwSp(12),
+    flexDirection:"column"
   },
 })
+
+const resultArea = css({
+  [f.pc()]: {
+    marginTop: f.vwPc(24),
+  },
+  [f.sp()]: {
+    marginTop: f.vwSp(24),
+  },
+  "span":{
+    display:"block",
+    fontSize:'0.985rem',
+    fontWeight:'500',
+    color:'#1A1A1C',
+    lineHeight:'1.5',
+    [f.pc()]: {
+      marginBottom:f.vwPc(12)
+    },
+    [f.sp()]: {
+      marginBottom:f.vwSp(12)
+    },
+  },
+  "p":{
+    fontSize:'1.25rem',
+    fontWeight:'700',
+    lineHeight:'1.5',
+    color:'#1A1A1C',
+  }
+})
+
+
 
 export default Apply3PointsLeaderInspection;

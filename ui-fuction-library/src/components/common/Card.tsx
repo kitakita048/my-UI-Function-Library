@@ -12,7 +12,7 @@ type CardProps = {
 
 const Card:React.FC<CardProps> = ({title,description,children}) => 
 {
-  const [openChildrenFlag,setOpenChildren] = useState(false)
+  const [openChildrenFlag,setOpenChildren] = useState<boolean>(false)
   const onOpenChildren = ()=> {
     setOpenChildren(!openChildrenFlag)
   }
