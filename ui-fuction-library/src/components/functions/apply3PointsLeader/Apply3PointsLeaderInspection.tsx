@@ -1,12 +1,18 @@
-import { FormProvider, useForm } from "react-hook-form";
-import { TextInput } from "../common/TextInput";
-import { Button } from "../common/Button"
+import React, { lazy, Suspense } from 'react'
 
-import  apply3PointsLeader from  "./utility/apply3PoinstsLeader"
+import { FormProvider, useForm } from "react-hook-form";
+import { TextInput } from "../../common/TextInput";
+import { Button } from "../../common/Button"
+
+import apply3PointsLeader from  "./apply3PoinstsLeader"
+import {codeString} from './codeString';
+
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 /** @jsxImportSource @emotion/react */
 import {css} from "@emotion/react"
-import {f} from "../../emotionStyles/function"
+import {f} from "../../../emotionStyles/function"
 import { useState } from "react";
 
 type FormData = {
@@ -21,7 +27,6 @@ const Apply3PointsLeaderInspection: React.FC = () => {
     const text = apply3PointsLeader(data.freeText, Number(data.maxNum))
     setResult(text)
   });
-
   return (
     <FormProvider {...methods}>
       <form>
@@ -47,6 +52,11 @@ const Apply3PointsLeaderInspection: React.FC = () => {
           <p>{resultText}</p>
         </div>
       )}
+      <div css={codeArea}>
+        <SyntaxHighlighter language='typescript' style={atomOneDarkReasonable}>
+          {codeString}
+        </SyntaxHighlighter>
+      </div>
     </FormProvider>
   );
 };
@@ -90,6 +100,18 @@ const resultArea = css({
     fontWeight:'700',
     lineHeight:'1.5',
     color:'#1A1A1C',
+  }
+})
+
+const codeArea = css({
+  [f.pc()]: {
+    marginTop:f.vwPc(24)
+  },
+  [f.sp()]: {
+    marginTop:f.vwSp(24)
+  },
+  "pre":{
+    overflow:"scroll !important"
   }
 })
 

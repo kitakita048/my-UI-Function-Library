@@ -4,7 +4,7 @@ import React from 'react';
 import {css} from "@emotion/react"
 import {f} from "./emotionStyles/function"
 import Card from './components/common/Card';
-import Apply3PointsLeaderInspection from './components/functions/Apply3PointsLeaderInspection';
+import Apply3PointsLeaderInspection from './components/functions/apply3PointsLeader/Apply3PointsLeaderInspection';
 
 const App = () => {
   return (
